@@ -1,0 +1,12 @@
+# built output
+artifacts
+dist
+tmp/**
+
+# debug
+yarn-debug.log*
+yarn-error.log*
+
+# dependencies
+node_modules
+.cache
