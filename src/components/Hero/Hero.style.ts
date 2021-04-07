@@ -1,9 +1,10 @@
-import styled from 'styled-components';
-
+import styled from "styled-components";
 
 const StyledHeroContainer = styled.div`
   position: relative;
-  &:after {
+  padding: 10px;
+  top: 50px;
+  /* &:after {
     position: absolute;
     display: block;
     content: '';
@@ -11,7 +12,16 @@ const StyledHeroContainer = styled.div`
     background-color: #FED86B;
     bottom: -50;
     z-index: 1;
-  }
+  } */
+`;
+const StyledArticle = styled.article`
+  position: absolute;
+  font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+  color: blue;
+  z-index: 3;
+  padding: 30px;
+  line-height: 1.2;
 `;
 
-export { StyledHeroContainer };
+export { StyledHeroContainer, StyledArticle };
