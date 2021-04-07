@@ -44,10 +44,9 @@ git clone git@github.com:Jyolilli/Jyoti-and-Lilli.git
 cd Jyoti-and-Lilli
 ```
 
-3. Install the project dependencies
+3. Install dependencies
 
 ```
-# Install Yarn
 yarn install
 ```
 

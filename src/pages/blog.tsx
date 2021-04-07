@@ -3,6 +3,7 @@ import { useRouteData } from 'react-static'
 import { Link } from '@reach/router'
 import { Post } from 'types'
 
+// Links to /blog
 export default () => {
   const { posts }: { posts: Post[] } = useRouteData()
 
