@@ -7,6 +7,11 @@ const StyledHeroContainer = styled.div`
   padding: 10px;
   top: 50px;
 `;
+
+const StyledImage = styled.img`
+  opacity: 0.5;
+`;
+
 const StyledArticle = styled(Text)`
   position: absolute;
   color: ${colors.primaryText};
@@ -15,4 +20,4 @@ const StyledArticle = styled(Text)`
   line-height: 1.2;
 `;
 
-export { StyledHeroContainer, StyledArticle };
+export { StyledHeroContainer, StyledArticle, StyledImage };
