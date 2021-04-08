@@ -1,24 +1,15 @@
 import styled from "styled-components";
+import { Text } from '@theme/components/Text';
+import { colors } from '@theme/styles/colors';
 
 const StyledHeroContainer = styled.div`
   position: relative;
   padding: 10px;
   top: 50px;
-  /* &:after {
-    position: absolute;
-    display: block;
-    content: '';
-    width: 100vw;
-    background-color: #FED86B;
-    bottom: -50;
-    z-index: 1;
-  } */
 `;
-const StyledArticle = styled.article`
+const StyledArticle = styled(Text)`
   position: absolute;
-  font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
-    sans-serif;
-  color: blue;
+  color: ${colors.primaryText};
   z-index: 3;
   padding: 30px;
   line-height: 1.2;

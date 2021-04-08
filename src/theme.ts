@@ -1,3 +1,6 @@
+import styled from 'styled-components'
+import { space, color, layout } from 'styled-system'
+
 export default {
   colors: {
     black: "#000e1a",
