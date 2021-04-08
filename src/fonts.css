@@ -1,0 +1,41 @@
+/**
+ * Fonts generated from
+ * https://www.fontsquirrel.com/fonts/open-sans
+ */ 
+
+ @font-face {
+    font-family: 'amble_regular';
+  
+    src: url('../../public/fonts/Amble-Regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+ @font-face {
+    font-family: 'amble_bold';
+  
+    src: url('../../public/fonts/Amble-Bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+ @font-face {
+    font-family: 'amble_bold_italic';
+  
+    src: url('../../public/fonts/Amble-BoldItalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+ @font-face {
+    font-family: 'amble_italic';
+  
+    src: url('../../public/fonts/Amble-Italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+ @font-face {
+    font-family: 'amble_light';
+  
+    src: url('../../public/fonts/Amble-Light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  

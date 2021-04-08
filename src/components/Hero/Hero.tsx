@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { StyledHeroContainer, StyledArticle } from "./Hero.style";
 // import { Box, Text, Spacer } from '@theme/components';
 // import {useHeroProps} from './Hero.props';
-import Bubble from "../../../public/images/bubble.svg";
+import Bubble from "@public/images/bubble.svg";
 
 // type HeroProps  = {
 // }
