@@ -6,10 +6,15 @@ const StyledHeroContainer = styled.div`
   position: relative;
   padding: 10px;
   top: 50px;
+  display: flex;
+  flex-direction: column;
 `;
 
-const StyledImage = styled.img`
+const StyledImageLight = styled.img`
   opacity: 0.5;
+`;
+const StyledImage = styled.img`
+  
 `;
 
 const StyledArticle = styled(Text)`
@@ -20,4 +25,4 @@ const StyledArticle = styled(Text)`
   line-height: 1.2;
 `;
 
-export { StyledHeroContainer, StyledArticle, StyledImage };
+export { StyledHeroContainer, StyledArticle, StyledImage, StyledImageLight };
