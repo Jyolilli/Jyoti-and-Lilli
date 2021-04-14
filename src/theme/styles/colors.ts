@@ -25,6 +25,7 @@
     orange: Color.goldenOrange,
     pinkOrange: Color.flipFlopOrange,
     green: Color.greenLake,
+    blue: Color.lightCornFlowerBlue,
   };
   
   export { colors };

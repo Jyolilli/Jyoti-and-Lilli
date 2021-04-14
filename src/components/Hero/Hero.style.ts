@@ -5,7 +5,6 @@ import { colors } from '@theme/styles/colors';
 const StyledHeroContainer = styled.div`
   position: relative;
   padding: 10px;
-  top: 50px;
   display: flex;
   flex-direction: column;
 `;

@@ -7,6 +7,7 @@ import './app.css'
 import HamburgerMenu from '@components/HamburgerMenu'
 import { ThemeProvider } from 'styled-components';
 import theme from './theme';
+import Nav from '@components/Nav/Nav'
 
 
 // Any routes that start with 'dynamic' will be treated as non-static routes
@@ -17,10 +18,7 @@ function App() {
     <Root>
       <ThemeProvider theme={theme}>
       <nav>
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/blog">Blog</Link>
-        <Link to="/dynamic">Dynamic</Link>
+        <Nav />
         <HamburgerMenu />
       </nav>
       <div className="content">
