@@ -4,7 +4,7 @@ const HamburgerMenu = () => {
 
     const [showMenu, setShowMenu] = useState(false);
 
-    const handleClick=()=>{
+    const handleShowMenu=()=>{
         setShowMenu(!showMenu)
     }
 
@@ -12,7 +12,7 @@ const HamburgerMenu = () => {
 
     return (
         <div>
-            <button onClick={handleClick}>x</button>
+            <button aria-label="Open and Close Menu" onClick={handleShowMenu}>x</button>
             {showMenu && <div>Menu!</div>}
         </div>
     )

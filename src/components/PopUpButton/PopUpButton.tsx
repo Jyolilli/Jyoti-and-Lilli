@@ -29,7 +29,7 @@ const PopUpButton = (props: usePopUpButtonProps) => {
   const [showButton, setShowButton] = useState(true);
   
 
-  const handleClick = () => {
+  const handlePopUp = () => {
     setShowPopUp(!showPopUp);
     setShowButton(!showButton);
   };
@@ -37,7 +37,7 @@ const PopUpButton = (props: usePopUpButtonProps) => {
   console.log("showPopUp", showPopUp);
 
   return (
-    <Box>{showButton && <StyledButton onClick={handleClick}></StyledButton>}
+    <Box>{showButton && <StyledButton aria-label="Open PopUp" onClick={handlePopUp}></StyledButton>}
       
       {showPopUp && (
         <Box
@@ -50,7 +50,7 @@ const PopUpButton = (props: usePopUpButtonProps) => {
           borderRadius="10px"
         >
           <Text variant="mediumText">{props.title}</Text>
-          <button onClick={handleClick}>x</button>
+          <button aria-label="Close PopUp" onClick={handlePopUp}>x</button>
         </Box>
       )}
     </Box>
