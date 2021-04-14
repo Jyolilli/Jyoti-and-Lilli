@@ -7,6 +7,7 @@ const StyledButton = styled.button`
       display: flex;
       align-items: center;
       border-radius: 50%;
+      border: none;
 `;
 
 export { StyledButton };

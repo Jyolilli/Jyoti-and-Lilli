@@ -12,15 +12,16 @@ import MediumBubbleLeft from "@public/images/bubble_m_left.svg";
 import SmallBubbleRight from "@public/images/bubble_s_right.svg";
 import SmallBubbleLeft from "@public/images/bubble_s_left.svg";
 import PopUpButton from "@components/PopUpButton/PopUpButton";
+import { data } from "@components/PopUpButton/PopUpData";
 
 const Hero = () => {
   const title = "Infobox";
 
   return (
     <StyledHeroContainer>
-      <PopUpButton title={title} />
+      <PopUpButton data={data} />
       <Text textAlign="center" color={`${colors.pinkOrange}`} variant="h1">
-        buddycode
+        wecode
       </Text>
       <Box pb={3}>
         <StyledArticle variant="mediumText">
