@@ -15,7 +15,7 @@ const Nav = () => {
       top="0"
       width="100%"
       height="70px"
-      backgroundColor={`${colors.primaryText}`}
+      backgroundColor={`${colors.lightBlue}`}
       justifyContent="flex-end"
     >
       <HamburgerMenu links={links} />

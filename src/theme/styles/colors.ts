@@ -3,7 +3,7 @@
  */
  export enum Color {
     lightCornFlowerBlue = '#8ECAE6',
-    blueGreen = '#219EBC',
+    blue = '#147baf',
     prussianBlue = '#023047',
     honeyYellow = '#FFB703',
     goldenOrange = '#FB8500',
@@ -20,7 +20,7 @@
     primaryText: Color.prussianBlue,
     primaryBlack: Color.black,
     primaryWhite: Color.white,
-    blueGreen: Color.blueGreen,
+    lightBlue: Color.blue,
     yellowBackGround: Color.honeyYellow,
     orange: Color.goldenOrange,
     pinkOrange: Color.flipFlopOrange,

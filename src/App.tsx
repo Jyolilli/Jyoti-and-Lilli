@@ -1,13 +1,18 @@
 import React from 'react'
 import { Root, Routes, addPrefetchExcludes } from 'react-static'
+import { library } from '@fortawesome/fontawesome-svg-core';
 import { Link, Router } from '@reach/router'
 import Hero from '@components/Hero/Hero'
 import Dynamic from '@containers/Dynamic'
 import './app.css'
-import HamburgerMenu from '@components/HamburgerMenu/HamburgerMenu'
+import {
+  faBars, faHeart,
+} from '@fortawesome/free-solid-svg-icons';
 import { ThemeProvider } from 'styled-components';
 import theme from './theme';
 import Nav from '@components/Nav/Nav'
+
+library.add(faBars, faHeart);
 
 
 // Any routes that start with 'dynamic' will be treated as non-static routes

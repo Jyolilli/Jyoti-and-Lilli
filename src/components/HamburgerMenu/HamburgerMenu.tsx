@@ -1,33 +1,51 @@
-import React, {useState} from 'react' 
+import React, { useState } from "react";
+import { Box } from "@theme/components/Box";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-    StyledHamburgerLabel,
-    StyledHamburgerIcon
-  } from "./HamburgerMenu.style";
+  StyledHamburgerMenu,
+  StyledLink,
+  StyledButton,
+} from "./HamburgerMenu.style";
+import { colors } from "@theme/styles/colors";
 
-  type HamburgerMenuProps = {
-      links: {
-        title?: string;
-        target?: string;
-      }[];   
-  };
+type HamburgerMenuProps = {
+  links: {
+    title?: string;
+    target?: string;
+  }[];
+};
 
 const HamburgerMenu = (props: HamburgerMenuProps) => {
-    const { links } = props;
+  const { links } = props;
 
-    const [showMenu, setShowMenu] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
 
-    const handleShowMenu=()=>{
-        setShowMenu(!showMenu)
-    }
+  const handleShowMenu = () => {
+    setShowMenu(!showMenu);
+  };
 
-    console.log('showMenu', showMenu)
+  console.log("showMenu", showMenu);
 
-    return (
-        <div>
-            <StyledHamburgerIcon aria-label="Open and Close Menu" onClick={handleShowMenu}></StyledHamburgerIcon>
-            {showMenu && <StyledHamburgerLabel>{links.map(link => <a href={link.target}>{link.title}</a>)}</StyledHamburgerLabel>}
-        </div>
-    )
-}
+  return (
+    <Box mr={3} mt={2} lineHeight="6px">
+        {!showMenu &&
+      <FontAwesomeIcon
+        icon="bars"
+        aria-label="Open and Close Menu"
+        size="3x"
+        color={colors.blue}
+        onClick={handleShowMenu}
+      />}
+      {showMenu && (
+        <StyledHamburgerMenu>
+          {links.map((link) => (
+            <StyledLink href={link.target}>{link.title}</StyledLink>
+          ))}
+          <StyledButton onClick={handleShowMenu}>x</StyledButton>
+        </StyledHamburgerMenu>
+      )}
+    </Box>
+  );
+};
 
-export default HamburgerMenu
+export default HamburgerMenu;

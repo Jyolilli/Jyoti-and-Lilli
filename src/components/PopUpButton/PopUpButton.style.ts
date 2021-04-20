@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Box } from "@theme/components/Box";
+import { colors } from "@theme/styles/colors";
 import { zIndexes } from "@theme/styles/zIndexes";
 
 const StyledButton = styled.button`
@@ -12,12 +13,13 @@ const StyledButton = styled.button`
   border: none;
 `;
 const StyledCloseButton = styled.button`
-  z-index: ${zIndexes.StyledCloseButton};
-  position: absolute;
-  right: 30px;
-  top: 30px;
-  border: none;
-  background-color: none;
+  color: ${colors.primaryWhite};
+  @media screen {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
 `;
 const StyledPopUp = styled(Box)`
   z-index: ${zIndexes.StyledPopUp};
