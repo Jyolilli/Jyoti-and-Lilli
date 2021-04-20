@@ -14,12 +14,15 @@ import SmallBubbleLeft from "@public/images/bubble_s_left.svg";
 import PopUpButton from "@components/PopUpButton/PopUpButton";
 import { data } from "@components/PopUpButton/PopUpData";
 
+
 const Hero = () => {
-  const title = "Infobox";
 
   return (
     <StyledHeroContainer>
-      <PopUpButton data={data} />
+        {data.map(data => 
+            <PopUpButton key={data.title} data={data} />    
+        )}
+      
       <Text textAlign="center" color={`${colors.pinkOrange}`} variant="h1">
         wecode
       </Text>

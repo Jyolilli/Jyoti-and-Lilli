@@ -4,7 +4,7 @@ import { Link, Router } from '@reach/router'
 import Hero from '@components/Hero/Hero'
 import Dynamic from '@containers/Dynamic'
 import './app.css'
-import HamburgerMenu from '@components/HamburgerMenu'
+import HamburgerMenu from '@components/HamburgerMenu/HamburgerMenu'
 import { ThemeProvider } from 'styled-components';
 import theme from './theme';
 import Nav from '@components/Nav/Nav'
@@ -19,7 +19,6 @@ function App() {
       <ThemeProvider theme={theme}>
       <nav>
         <Nav />
-        <HamburgerMenu />
       </nav>
       <div className="content">
         <Hero />

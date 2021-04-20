@@ -3,7 +3,11 @@ import { Box } from "@theme/components/Box";
 import { Text } from "@theme/components/Text";
 import { colors } from "@theme/styles/colors";
 import styled from "styled-components";
-import { StyledButton } from "./PopUpButton.style";
+import {
+  StyledButton,
+  StyledCloseButton,
+  StyledPopUp,
+} from "./PopUpButton.style";
 
 const StyledButtonText = styled(Text)`
   @media (min-width: 768px) {
@@ -18,58 +22,53 @@ const StyledButtonText = styled(Text)`
   }
 `;
 
-type usePopUpButtonProps = {
+// animals: string[]; ["Goat", "Monkey"] Array<string>
+// animal: string;
+type PopUpButtonProps = {
   data: {
     title?: string;
     heading?: string;
     copy?: string;
     text_link?: string;
     link?: string;
-  }[];
+  };
 };
 
-const PopUpButton = (props: usePopUpButtonProps) => {
+const PopUpButton = (props: PopUpButtonProps) => {
   const [showPopUp, setShowPopUp] = useState(false);
-  const [showButton, setShowButton] = useState(true);
 
   const handlePopUp = () => {
     setShowPopUp(!showPopUp);
-    setShowButton(!showButton);
   };
 
   const { data } = props;
 
   return (
-    <>
-      {data.map((data, index) => (
-        <Box key={`item-${index}`}>
-          {showButton && (
-            <StyledButton
-              aria-label="Open PopUp"
-              onClick={handlePopUp}
-            ></StyledButton>
-          )}
+    <Box>
+      {!showPopUp && (
+        <StyledButton
+          aria-label="Open PopUp"
+          onClick={handlePopUp}
+        ></StyledButton>
+      )}
 
-          {showPopUp && (
-            <Box
-              minWidth="150px"
-              height="300px"
-              backgroundColor={`${colors.pinkOrange}`}
-              color={`${colors.primaryWhite}`}
-              mt={6}
-              p={2}
-              borderRadius="10px"
-              position="absolute"
-            >
-              <Text variant="mediumText">{data.title}</Text>
-              <button aria-label="Close PopUp" onClick={handlePopUp}>
-                x
-              </button>
-            </Box>
-          )}
-        </Box>
-      ))}
-    </>
+      {showPopUp && (
+        <StyledPopUp
+          minWidth="150px"
+          height="300px"
+          backgroundColor={`${colors.pinkOrange}`}
+          color={`${colors.primaryWhite}`}
+          mt={6}
+          p={2}
+          borderRadius="10px"
+        >
+          <Text variant="mediumText">{data.title}</Text>
+          <StyledCloseButton aria-label="Close PopUp" onClick={handlePopUp}>
+            x
+          </StyledCloseButton>
+        </StyledPopUp>
+      )}
+    </Box>
   );
 };
 
