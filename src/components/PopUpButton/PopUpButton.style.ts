@@ -20,6 +20,7 @@ const StyledCloseButton = styled.button`
     right: 10px;
     background: none;
     border: none;
+  }
 `;
 const StyledPopUp = styled(Box)`
   z-index: ${zIndexes.StyledPopUp};

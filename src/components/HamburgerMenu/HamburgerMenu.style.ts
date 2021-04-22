@@ -1,13 +1,11 @@
 import styled from "styled-components";
-import { Text } from "@theme/components/Text";
-import { Box } from "@theme/components/Box";
 import { colors } from "@theme/styles/colors";
 import { fonts } from "@theme/styles/fonts";
 
 const StyledLink = styled.a`
   font-family: ${fonts.ambleItalic};
   color: ${colors.primaryWhite};
-  margin-top: 5px;
+  margin-left: 7px;
   text-decoration: none;
   &:focus,
   &:hover,
@@ -15,15 +13,23 @@ const StyledLink = styled.a`
   &:active {
     text-decoration: none;
   }
+
+`;
+
+// delete if not used for the final version
+const StyledIcon = styled.div`
+  &:hover {
+    color: ${colors.primaryWhite};
+  }
 `;
 
 const StyledHamburgerMenu = styled.label`
   background-color: ${colors.blue};
   position: fixed;
-  padding: 20px 0 20px 0;
+  padding-top: 20px;
   top: 4.4rem;
   right: 0rem;
-  width: 7rem;
+  width: 150px;
   cursor: pointer;
   z-index: 10;
   line-height: 24px;
@@ -44,4 +50,4 @@ const StyledButton = styled.button`
   }
 `;
 
-export { StyledButton, StyledLink, StyledHamburgerMenu };
+export { StyledButton, StyledLink, StyledIcon, StyledHamburgerMenu };

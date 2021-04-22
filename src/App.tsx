@@ -1,18 +1,18 @@
 import React from 'react'
 import { Root, Routes, addPrefetchExcludes } from 'react-static'
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { Link, Router } from '@reach/router'
+import { Router } from '@reach/router'
 import Hero from '@components/Hero/Hero'
 import Dynamic from '@containers/Dynamic'
 import './app.css'
 import {
-  faBars, faHeart,
+  faBars, faHeart, faArrowAltCircleRight 
 } from '@fortawesome/free-solid-svg-icons';
 import { ThemeProvider } from 'styled-components';
 import theme from './theme';
 import Nav from '@components/Nav/Nav'
 
-library.add(faBars, faHeart);
+library.add(faBars, faHeart, faArrowAltCircleRight);
 
 
 // Any routes that start with 'dynamic' will be treated as non-static routes

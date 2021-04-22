@@ -5,6 +5,7 @@ import {
   StyledHamburgerMenu,
   StyledLink,
   StyledButton,
+  StyledIcon,
 } from "./HamburgerMenu.style";
 import { colors } from "@theme/styles/colors";
 
@@ -20,6 +21,7 @@ const HamburgerMenu = (props: HamburgerMenuProps) => {
 
   const [showMenu, setShowMenu] = useState(false);
 
+
   const handleShowMenu = () => {
     setShowMenu(!showMenu);
   };
@@ -28,18 +30,30 @@ const HamburgerMenu = (props: HamburgerMenuProps) => {
 
   return (
     <Box mr={3} mt={2} lineHeight="6px">
-        {!showMenu &&
-      <FontAwesomeIcon
-        icon="bars"
-        aria-label="Open and Close Menu"
-        size="3x"
-        color={colors.blue}
-        onClick={handleShowMenu}
-      />}
+      {!showMenu && (
+        <FontAwesomeIcon
+          icon="bars"
+          aria-label="Open and Close Menu"
+          size="3x"
+          color={colors.blue}
+          onClick={handleShowMenu}
+        />
+      )}
       {showMenu && (
         <StyledHamburgerMenu>
           {links.map((link) => (
-            <StyledLink href={link.target}>{link.title}</StyledLink>
+            <Box display="flex" alignItems="center" padding={2}>
+              <StyledIcon >
+                <FontAwesomeIcon
+                  icon="arrow-alt-circle-right"
+                  aria-label="Open and Close Menu"
+                  size="1x"
+                  color={colors.lightBlue}    
+                />
+              </StyledIcon>
+
+              <StyledLink href={link.target}>{link.title}</StyledLink>
+            </Box>
           ))}
           <StyledButton onClick={handleShowMenu}>x</StyledButton>
         </StyledHamburgerMenu>
