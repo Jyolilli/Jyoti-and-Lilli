@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   StyledHamburgerMenu,
   StyledLink,
-  StyledButton,
+  StyledCloseButton,
   StyledIcon,
 } from "./HamburgerMenu.style";
 import { colors } from "@theme/styles/colors";
@@ -55,7 +55,7 @@ const HamburgerMenu = (props: HamburgerMenuProps) => {
               <StyledLink href={link.target}>{link.title}</StyledLink>
             </Box>
           ))}
-          <StyledButton onClick={handleShowMenu}>x</StyledButton>
+          <StyledCloseButton onClick={handleShowMenu}>x</StyledCloseButton>
         </StyledHamburgerMenu>
       )}
     </Box>

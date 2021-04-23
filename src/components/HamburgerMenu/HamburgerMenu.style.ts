@@ -4,7 +4,7 @@ import { fonts } from "@theme/styles/fonts";
 
 const StyledLink = styled.a`
   font-family: ${fonts.ambleItalic};
-  color: ${colors.primaryWhite};
+  color: ${colors.lightBlue};
   margin-left: 7px;
   text-decoration: none;
   &:focus,
@@ -13,7 +13,6 @@ const StyledLink = styled.a`
   &:active {
     text-decoration: none;
   }
-
 `;
 
 // delete if not used for the final version
@@ -39,15 +38,16 @@ const StyledHamburgerMenu = styled.label`
   justify-content: space-around;
 `;
 
-const StyledButton = styled.button`
+const StyledCloseButton = styled.button`
   color: ${colors.primaryWhite};
+  font-size: 25px;
   @media screen {
     position: absolute;
-    top: 3px;
-    right: 7px;
+    top: -1px;
+    right: 5px;
     background: none;
     border: none;
   }
 `;
 
-export { StyledButton, StyledLink, StyledIcon, StyledHamburgerMenu };
+export { StyledCloseButton, StyledLink, StyledIcon, StyledHamburgerMenu };

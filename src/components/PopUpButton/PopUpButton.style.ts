@@ -14,6 +14,7 @@ const StyledButton = styled.button`
 `;
 const StyledCloseButton = styled.button`
   color: ${colors.primaryWhite};
+  font-size: 25px;
   @media screen {
     position: absolute;
     top: 10px;

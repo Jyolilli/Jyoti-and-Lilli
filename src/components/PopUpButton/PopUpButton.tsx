@@ -58,8 +58,7 @@ const PopUpButton = (props: PopUpButtonProps) => {
           height="300px"
           backgroundColor={`${colors.pinkOrange}`}
           color={`${colors.primaryWhite}`}
-          mt={6}
-          p={2}
+          p={3}
           borderRadius="10px"
         >
           <Text variant="mediumText">{data.title}</Text>
