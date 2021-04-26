@@ -29,3 +29,4 @@ const StyledPopUp = styled(Box)`
 `;
 
 export { StyledPopUp, StyledButton, StyledCloseButton };
+

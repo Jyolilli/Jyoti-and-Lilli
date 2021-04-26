@@ -62,6 +62,7 @@ const PopUpButton = (props: PopUpButtonProps) => {
           borderRadius="10px"
         >
           <Text variant="mediumText">{data.title}</Text>
+          <Text variant="mediumText">{data.copy}</Text>
           <StyledCloseButton aria-label="Close PopUp" onClick={handlePopUp}>
             x
           </StyledCloseButton>
