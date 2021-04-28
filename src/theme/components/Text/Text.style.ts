@@ -20,7 +20,7 @@ const variant = _variant({
       fontFamily: fonts.ambleBold,
       fontWeight: fontWeight.normal,
       fontStyle: fontStyle.normal,
-      fontSize: px([40, null, null, null, 60, null]),
+      fontSize: px([50, null, null, null, 60, null]),
       lineHeight: px([48, null, null, null, 80, null]),
     },
 

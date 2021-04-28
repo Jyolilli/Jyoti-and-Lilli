@@ -3,7 +3,15 @@ import { Box } from "@theme/components/Box";
 import { colors } from "@theme/styles/colors";
 import { zIndexes } from "@theme/styles/zIndexes";
 
-const StyledButton = styled.button`
+export interface DefaultTheme {
+  positionTop: number;
+  positionLeft: number;
+};
+
+const StyledButton = styled.button<DefaultTheme>`
+  position: absolute;
+  top: ${props => props.positionTop + 'px' || 0};
+  left: ${props => props.positionLeft + 'px' || 0};
   width: 50px;
   height: 50px;
   background-color: red;
@@ -11,6 +19,7 @@ const StyledButton = styled.button`
   align-items: center;
   border-radius: 50%;
   border: none;
+  z-index: 20;
 `;
 const StyledCloseButton = styled.button`
   color: ${colors.primaryWhite};
