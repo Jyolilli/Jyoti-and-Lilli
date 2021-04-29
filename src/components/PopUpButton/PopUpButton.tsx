@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Box } from "@theme/components/Box";
 import { Text } from "@theme/components/Text";
 import { colors } from "@theme/styles/colors";
@@ -26,12 +26,15 @@ const StyledButtonText = styled(Text)`
 // animal: string;
 type PopUpButtonProps = {
   data: {
-    title?: string;
-    heading?: string;
-    copy?: string;
-    text_link?: string;
-    link?: string;
+    popUpTitle?: string;
+    popUpCopy?: string;
+    popUpText_link?: string;
+    popUpLink?: string;
   };
+  positionTop?: number;
+  positionLeft?: number;
+  buttonHeight?: number;
+  buttonWidth?: number;
 };
 
 const PopUpButton = (props: PopUpButtonProps) => {
@@ -47,6 +50,10 @@ const PopUpButton = (props: PopUpButtonProps) => {
     <Box>
       {!showPopUp && (
         <StyledButton
+          positionTop={props.positionTop}
+          positionLeft={props.positionLeft}
+          buttonHeight={props.buttonHeight}
+          buttonWidth={props.buttonHeight}
           aria-label="Open PopUp"
           onClick={handlePopUp}
         ></StyledButton>
@@ -61,8 +68,8 @@ const PopUpButton = (props: PopUpButtonProps) => {
           p={3}
           borderRadius="10px"
         >
-          <Text variant="mediumText">{data.title}</Text>
-          <Text variant="mediumText">{data.copy}</Text>
+          <Text variant="h2">{data.popUpTitle}</Text>
+          <Text variant="mediumText">{data.popUpCopy}</Text>
           <StyledCloseButton aria-label="Close PopUp" onClick={handlePopUp}>
             x
           </StyledCloseButton>

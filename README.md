@@ -23,6 +23,8 @@ import FancyDiv from '@components/FancyDiv'
 
 A one page static site powered by [React Static](cd) using [TypeScript](https://www.typescriptlang.org/).
 
+![our website - still WIP](https://github.com/Jyolilli/Jyoti-and-Lilli/blob/main/public/images/Jyoli.png)
+
 
 ## Prerequisites
 
