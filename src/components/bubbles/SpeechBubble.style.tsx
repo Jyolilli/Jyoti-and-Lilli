@@ -20,7 +20,7 @@ const StyledArticle = styled(Text)`
   position: absolute;
   color: ${colors.primaryText};
   z-index: 3;
-  padding: 30px;
+  padding: 10px 30px;
   line-height: 1.2;
 `;
 

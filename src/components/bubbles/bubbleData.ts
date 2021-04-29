@@ -1,7 +1,7 @@
 const bubbleData = [
   {
     id: 1,
-    copy: "Hey Jyoti, do you remember how we met?",
+    copy: "Hey Jyoti, next thing I really want to dive into is Styled System! Do you know anything about it? Your CSS becomes much more consistent and readable..",
     text_link: "Check this for more information",
     bubble: "/images/bubble_s_left.svg",
     popUpTitle: "Styled System",
@@ -13,7 +13,7 @@ const bubbleData = [
   {
     id: 2,
     copy:
-      "Oh, yes, July 2020 at Codebar Berlin? We shared one coach and both worked on a React project",
+      "Hi Lilli, this week I am all into useRefs! Wow, it's so hard to wrap my head around this, sigh..",
     text_link: "Check this for more information",
     bubble: "/images/bubble_s_right.svg",
     popUpTitle: "Web components",
@@ -36,7 +36,7 @@ const bubbleData = [
   },
   {
     id: 4,
-    copy: "Hey Jyoti, do you remember how we met?",
+    copy: "Hey Jyoti, next thing I really want to dive into is Styled System! Do you know anything about it? Your CSS becomes much more consistent and readable..",
     text_link: "Check this for more information",
     bubble: "/images/bubble_s_left.svg",
     popUpTitle: "Reduce()",
@@ -48,7 +48,7 @@ const bubbleData = [
   {
     id: 5,
     copy:
-      "Oh, yes, July 2020 at Codebar Berlin? We shared one coach and both worked on a React project",
+      "Hi Lilli, next thing I really want to dive into is Styled System! Do you know anything about it? Your CSS becomes much more consistent and readable..",
     text_link: "Check this for more information",
     bubble: "/images/bubble_s_right.svg",
     popUpTitle: "Fun fun functions",
@@ -60,7 +60,7 @@ const bubbleData = [
   {
     id: 6,
     copy:
-      "Next week we will do this workshop on Typescript together. Cannot wait for my brain to finally click when it comes to TS",
+      "Hey Jyoti, next thing I really want to dive into is Styled System! Do you know anything about it? Your CSS becomes much more consistent and readable..",
     text_link: "Check this for more information",
     bubble: "/images/bubble_s_left.svg",
     popUpTitle: "Codewars",

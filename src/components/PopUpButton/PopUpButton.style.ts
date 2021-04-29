@@ -19,7 +19,8 @@ const StyledButton = styled.button<DefaultTheme>`
   align-items: center;
   border-radius: 50%;
   border: none;
-  z-index: 20;
+  z-index: ${zIndexes.StyledButton};
+  opacity: 0.5;
 `;
 const StyledCloseButton = styled.button`
   color: ${colors.primaryWhite};
