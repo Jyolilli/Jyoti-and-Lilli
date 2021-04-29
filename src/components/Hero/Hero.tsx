@@ -17,12 +17,13 @@ const Hero = () => {
       </Text>
 
       {bubbleData.map((data) => {
-        const bubbleHeight = 111; const bubbleWidth = 335;
+        const bubbleHeight = 111; const bubbleWidth = 335; const buttonMax = 50;
         const buttonTop = Math.floor(Math.random() * bubbleHeight); const buttonLeft = Math.floor(Math.random() * bubbleWidth);
+        const buttonHeight = Math.floor(Math.random() * buttonMax) + 50; 
         return (
           <StyledPopUpContainer>
             <SpeechBubble key={data.id} bubbleData={data} />
-            <PopUpButton  positionTop={buttonTop} positionLeft={buttonLeft} key={data.popUpTitle} data={data} />
+            <PopUpButton  buttonHeight={buttonHeight} positionTop={buttonTop} positionLeft={buttonLeft} key={data.popUpTitle} data={data} />
           </StyledPopUpContainer>
         );
       })}

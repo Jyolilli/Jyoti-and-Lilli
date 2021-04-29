@@ -6,14 +6,16 @@ import { zIndexes } from "@theme/styles/zIndexes";
 export interface DefaultTheme {
   positionTop: number;
   positionLeft: number;
+  buttonHeight: number;
+  buttonWidth: number;
 };
 
 const StyledButton = styled.button<DefaultTheme>`
   position: absolute;
   top: ${props => props.positionTop + 'px' || 0};
   left: ${props => props.positionLeft + 'px' || 0};
-  width: 50px;
-  height: 50px;
+  width: ${props => props.buttonHeight + 'px' || 0};
+  height: ${props => props.buttonHeight + 'px' || 0};
   background-color: red;
   display: flex;
   align-items: center;

@@ -33,6 +33,8 @@ type PopUpButtonProps = {
   };
   positionTop?: number;
   positionLeft?: number;
+  buttonHeight?: number;
+  buttonWidth?: number;
 };
 
 const PopUpButton = (props: PopUpButtonProps) => {
@@ -50,6 +52,8 @@ const PopUpButton = (props: PopUpButtonProps) => {
         <StyledButton
           positionTop={props.positionTop}
           positionLeft={props.positionLeft}
+          buttonHeight={props.buttonHeight}
+          buttonWidth={props.buttonHeight}
           aria-label="Open PopUp"
           onClick={handlePopUp}
         ></StyledButton>

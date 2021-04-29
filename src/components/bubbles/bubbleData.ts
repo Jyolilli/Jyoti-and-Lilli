@@ -16,7 +16,7 @@ const bubbleData = [
       "Hi Lilli, this week I am all into useRefs! Wow, it's so hard to wrap my head around this, sigh..",
     text_link: "Check this for more information",
     bubble: "/images/bubble_s_right.svg",
-    popUpTitle: "Web components",
+    popUpTitle: "UseRefs",
     popUpCopy:
       "Automatic critical CSS: styled-components keeps track of which components are rendered on a page and injects their styles and nothing else, fully automatically. Combined with code splitting, this means your users load the least amount of code necessary.",
     popUpText_link: "Check this for more information",
@@ -28,7 +28,7 @@ const bubbleData = [
       "Next week we will do this workshop on Typescript together. Cannot wait for my brain to finally click when it comes to TS",
     text_link: "Check this for more information",
     bubble: "/images/bubble_s_left.svg",
-    popUpTitle: "React context",
+    popUpTitle: "Typescript",
     popUpCopy:
       "Automatic critical CSS: styled-components keeps track of which components are rendered on a page and injects their styles and nothing else, fully automatically. Combined with code splitting, this means your users load the least amount of code necessary.",
     popUpText_link: "Check this for more information",
@@ -36,10 +36,10 @@ const bubbleData = [
   },
   {
     id: 4,
-    copy: "Hey Jyoti, next thing I really want to dive into is Styled System! Do you know anything about it? Your CSS becomes much more consistent and readable..",
+    copy: "Hey Jyoti, let's decide on what kind of database we'll use for our next project. What do you think about Mongodb, has been a while since I used it..",
     text_link: "Check this for more information",
     bubble: "/images/bubble_s_left.svg",
-    popUpTitle: "Reduce()",
+    popUpTitle: "MongoDB",
     popUpCopy:
       "Automatic critical CSS: styled-components keeps track of which components are rendered on a page and injects their styles and nothing else, fully automatically. Combined with code splitting, this means your users load the least amount of code necessary.",
     popUpText_link: "Check this for more information",
@@ -48,7 +48,7 @@ const bubbleData = [
   {
     id: 5,
     copy:
-      "Hi Lilli, next thing I really want to dive into is Styled System! Do you know anything about it? Your CSS becomes much more consistent and readable..",
+      "Hi Lilli, this weekend I want to take some time and tackle algorithms and higher order functions again",
     text_link: "Check this for more information",
     bubble: "/images/bubble_s_right.svg",
     popUpTitle: "Fun fun functions",
@@ -60,7 +60,7 @@ const bubbleData = [
   {
     id: 6,
     copy:
-      "Hey Jyoti, next thing I really want to dive into is Styled System! Do you know anything about it? Your CSS becomes much more consistent and readable..",
+    "Hey Jyoti, let's decide on what kind of database we'll use for our next project. What do you think about Mongodb, has been a while since I used it..",
     text_link: "Check this for more information",
     bubble: "/images/bubble_s_left.svg",
     popUpTitle: "Codewars",
