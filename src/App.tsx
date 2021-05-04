@@ -9,16 +9,23 @@ import {
   faBars, faHeart, faArrowAltCircleRight 
 } from '@fortawesome/free-solid-svg-icons';
 import { ThemeProvider } from 'styled-components';
+import { gql, useQuery } from '@apollo/client';
 import theme from './theme';
 import Nav from '@components/Nav/Nav'
-
 library.add(faBars, faHeart, faArrowAltCircleRight);
-
-
 // Any routes that start with 'dynamic' will be treated as non-static routes
 addPrefetchExcludes(['dynamic'])
 
+
 function App() {
+  const GET_USERS = gql`query {
+    users {
+      name
+      id
+    }
+  }`
+  const { loading, error, data } = useQuery(GET_USERS)
+console.log('data from hasura', data)
   return (
     <Root>
       <ThemeProvider theme={theme}>
@@ -38,5 +45,15 @@ function App() {
     </Root>
   )
 }
-
 export default App
+
+
+
+
+
+
+
+
+
+
+
