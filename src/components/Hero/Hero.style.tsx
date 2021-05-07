@@ -16,12 +16,6 @@ const StyledPopUpContainer = styled.div`
   flex-direction: column;
 `;
 
-const ContainerWithRef = React.forwardRef<any, HTMLDivElement>((props, ref) => (
-  <div ref={ref}>
-    {props.children}
-  </div>
-
-)
 
 
-export { StyledHeroContainer, ContainerWithRef };
+export { StyledHeroContainer, StyledPopUpContainer };

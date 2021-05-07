@@ -52,7 +52,7 @@ const PopUpButton = (props: PopUpButtonProps) => {
           positionLeft={props.positionLeft}
           aria-label="Open PopUp"
           onClick={handlePopUp}
-        ></StyledButton>
+    />
       )}
 
       {showPopUp && (

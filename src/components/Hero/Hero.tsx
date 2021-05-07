@@ -1,5 +1,5 @@
 import React, { useState} from "react";
-import { StyledHeroContainer, ContainerWithRef } from "./Hero.style";
+import {StyledHeroContainer, StyledPopUpContainer} from "./Hero.style";
 import { Text } from "@theme/components/Text";
 import { colors } from "@theme/styles/colors";
 import PopUpButton from "@components/PopUpButton/PopUpButton";
@@ -8,8 +8,6 @@ import { bubbleData } from "@components/bubbles/bubbleData";
 
 const Hero = () => {
   const [bubbleIdHighlighted, setbubbleIdHighlighted] = useState(false);
-  const refContainer = React.createRef<HTMLDivElement>(); //this refContainer contains the node
-
 
   return (
     <StyledHeroContainer>
@@ -18,13 +16,12 @@ const Hero = () => {
       </Text>
 
       {bubbleData.map((data) => {
-        const bubbleHeight = 111; const bubbleWidth = 335;
-        const buttonTop = Math.floor(Math.random() * bubbleHeight); const buttonLeft = Math.floor(Math.random() * bubbleWidth);
+        const buttonTop = Math.floor(Math.random() * 100); const buttonLeft = Math.floor(Math.random() * 100);
         return (
-          <ContainerWithRef ref={refContainer}>
+          <StyledPopUpContainer>
             <SpeechBubble key={data.id} bubbleData={data} />
             <PopUpButton  positionTop={buttonTop} positionLeft={buttonLeft} key={data.popUpTitle} data={data} />
-          </ContainerWithRef>
+          </StyledPopUpContainer>
         );
       })}
     </StyledHeroContainer>

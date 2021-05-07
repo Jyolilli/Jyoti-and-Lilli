@@ -10,8 +10,8 @@ export interface DefaultTheme {
 
 const StyledButton = styled.button<DefaultTheme>`
   position: absolute;
-  top: ${props => props.positionTop + 'px' || 0};
-  left: ${props => props.positionLeft + 'px' || 0};
+  top: ${props => props.positionTop + '%' || 0};
+  left: ${props => props.positionLeft + '%' || 0};
   width: 50px;
   height: 50px;
   background-color: red;
