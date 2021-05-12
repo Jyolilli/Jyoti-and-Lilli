@@ -11,35 +11,34 @@ const Hero = () => {
   const StyledText = styled(Text)`
     margin-bottom: 5px;
   `;
+    const StyledHeroContainer = styled.div`
+    position: relative;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 0.5px dotted var(--black, ${colors.lightBlue});
+  `;
   // const [bubbleIdHighlighted, setbubbleIdHighlighted] = useState(false); // just a reminder, remove in production
-
-  const StyledHeroContainer = styled.div`
-  position: relative;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  border-bottom: 0.5px dotted var(--black, ${colors.lightBlue});
-`;
 
   return (
     <StyledHeroContainer>
-      <Box>
-        <StyledText
-          textAlign="center"
-          color={`${colors.pinkOrange}`}
-          variant="h1"
-        >
-          jyolilli
-        </StyledText>
-      </Box>
-      <Text
+    <Box>
+      <StyledText
         textAlign="center"
         color={`${colors.pinkOrange}`}
-        variant="roofLine"
+        variant="h1"
       >
-        {" "}
-        nifty + swifty code lizzards
-      </Text>
+        jyolilli
+      </StyledText>
+    </Box>
+    <Text
+      textAlign="center"
+      color={`${colors.pinkOrange}`}
+      variant="roofLine"
+    >
+      {" "}
+      nifty + swifty code lizzards
+    </Text>
   
     </StyledHeroContainer>
   );

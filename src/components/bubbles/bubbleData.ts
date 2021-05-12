@@ -25,9 +25,9 @@ const bubbleData = [
   {
     id: 3,
     copy:
-      "Next week we will do this workshop on Typescript together. Cannot wait for my brain to finally click when it comes to TS",
+      "Next week we will do this workshop on Typescript together. Cannot wait for my brain to finally click when it comes to TS. In short, TypeScript is a superset of JavaScript that has optional typing and compiles to plain JavaScript. In simpler words, TypeScript technically is JavaScript with static typing, whenever you want to have it.",
     text_link: "Check this for more information",
-    bubble: "/images/bubble_s_left.svg",
+    bubble: "/images/bubble_m_left.svg",
     popUpTitle: "Typescript",
     popUpCopy:
       "Automatic critical CSS: styled-components keeps track of which components are rendered on a page and injects their styles and nothing else, fully automatically. Combined with code splitting, this means your users load the least amount of code necessary.",

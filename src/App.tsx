@@ -11,8 +11,10 @@ import {
   faArrowAltCircleRight,
 } from "@fortawesome/free-solid-svg-icons";
 import { ThemeProvider } from "styled-components";
+import { gql, useQuery } from "@apollo/client";
 import theme from "./theme";
 import Nav from "@components/Nav/Nav";
+
 import GlobalStyles from "@theme/globalStyles";
 
 library.add(faBars, faHeart, faArrowAltCircleRight);
@@ -21,12 +23,34 @@ library.add(faBars, faHeart, faArrowAltCircleRight);
 addPrefetchExcludes(["dynamic"]);
 
 function App() {
+  const USERS = gql`
+    query GetUsers {
+      users {
+        name
+        id
+      }
+    }
+  `;
+
+  function Users() {
+    const { loading, error, data } = useQuery(USERS);
+    console.log("data from hasura", data);
+
+    if (loading) return <p>Loading...</p>;
+    if (error) return <p>Error :(</p>;
+
+    return data.users.map((data: { name: string; id: number }) => (
+      <div key={data.id}>{data.name}</div>
+    ));
+  }
+
   return (
     <Root>
       <ThemeProvider theme={theme}>
         <GlobalStyles />
         <Nav />
         <Hero />
+        <Users />
         <Content />
         <React.Suspense fallback={<em>Loading...</em>}>
           <Router>
@@ -38,5 +62,4 @@ function App() {
     </Root>
   );
 }
-
 export default App;
