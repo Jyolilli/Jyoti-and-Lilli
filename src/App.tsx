@@ -3,8 +3,8 @@ import { Root, Routes, addPrefetchExcludes } from "react-static";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { Router } from "@reach/router";
 import Hero from "@components/Hero/Hero";
+import Content from "@components/Content";
 import Dynamic from "@containers/Dynamic";
-import "./app.css";
 import {
   faBars,
   faHeart,
@@ -15,7 +15,10 @@ import { gql, useQuery } from "@apollo/client";
 import theme from "./theme";
 import Nav from "@components/Nav/Nav";
 
+import GlobalStyles from "@theme/globalStyles";
+
 library.add(faBars, faHeart, faArrowAltCircleRight);
+
 // Any routes that start with 'dynamic' will be treated as non-static routes
 addPrefetchExcludes(["dynamic"]);
 
@@ -44,18 +47,17 @@ function App() {
   return (
     <Root>
       <ThemeProvider theme={theme}>
+        <GlobalStyles />
         <Nav />
-        <div className="content">
-          <Hero />
-          <Users />
-
-          <React.Suspense fallback={<em>Loading...</em>}>
-            <Router>
-              <Dynamic path="dynamic" />
-              <Routes path="*" />
-            </Router>
-          </React.Suspense>
-        </div>
+        <Hero />
+        <Users />
+        <Content />
+        <React.Suspense fallback={<em>Loading...</em>}>
+          <Router>
+            <Dynamic path="dynamic" />
+            <Routes path="*" />
+          </Router>
+        </React.Suspense>
       </ThemeProvider>
     </Root>
   );
