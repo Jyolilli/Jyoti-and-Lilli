@@ -1,26 +1,27 @@
 import React from "react";
+import styled from "styled-components";
 import { Box } from "@theme/components/Box";
 import { colors } from "@theme/styles/colors";
 import HamburgerMenu from "@components/HamburgerMenu/HamburgerMenu";
 
-const Nav = () => {
+const Navbar = () => {
   const links = [
     { title: "Hello World", target: "https://www.google.com/search?q=hello" },
     { title: "Hello Berlin", target: "https://www.google.com/search?q=berlin" },
   ];
+
+  const StyledNavbar = styled.nav`
+    display: flex;
+    height: 70px;
+    background-color: ${colors.lightBlue};
+    justify-content: flex-end;
+  `;
+
   return (
-    <Box
-      display="flex"
-      position="relative"
-      top="0"
-      width="100%"
-      height="70px"
-      backgroundColor={colors.lightBlue}
-      justifyContent="flex-end"
-    >
+    <StyledNavbar>
       <HamburgerMenu links={links} />
-    </Box>
+    </StyledNavbar>
   );
 };
 
-export default Nav;
+export default Navbar;
