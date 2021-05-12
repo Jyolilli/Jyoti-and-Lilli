@@ -1,59 +1,63 @@
-import React from 'react'
-import { Root, Routes, addPrefetchExcludes } from 'react-static'
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { Router } from '@reach/router'
-import Hero from '@components/Hero/Hero'
-import Dynamic from '@containers/Dynamic'
-import './app.css'
+import React from "react";
+import { Root, Routes, addPrefetchExcludes } from "react-static";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { Router } from "@reach/router";
+import Hero from "@components/Hero/Hero";
+import Dynamic from "@containers/Dynamic";
+import "./app.css";
 import {
-  faBars, faHeart, faArrowAltCircleRight 
-} from '@fortawesome/free-solid-svg-icons';
-import { ThemeProvider } from 'styled-components';
-import { gql, useQuery } from '@apollo/client';
-import theme from './theme';
-import Nav from '@components/Nav/Nav'
+  faBars,
+  faHeart,
+  faArrowAltCircleRight,
+} from "@fortawesome/free-solid-svg-icons";
+import { ThemeProvider } from "styled-components";
+import { gql, useQuery } from "@apollo/client";
+import theme from "./theme";
+import Nav from "@components/Nav/Nav";
+
 library.add(faBars, faHeart, faArrowAltCircleRight);
 // Any routes that start with 'dynamic' will be treated as non-static routes
-addPrefetchExcludes(['dynamic'])
-
+addPrefetchExcludes(["dynamic"]);
 
 function App() {
-  const GET_USERS = gql`query {
-    users {
-      name
-      id
+  const USERS = gql`
+    query GetUsers {
+      users {
+        name
+        id
+      }
     }
-  }`
-  const { loading, error, data } = useQuery(GET_USERS)
-console.log('data from hasura', data)
+  `;
+
+  function Users() {
+    const { loading, error, data } = useQuery(USERS);
+    console.log("data from hasura", data);
+
+    if (loading) return <p>Loading...</p>;
+    if (error) return <p>Error :(</p>;
+
+    return data.users.map((data: { name: string; id: number }) => (
+      <div key={data.id}>{data.name}</div>
+    ));
+  }
+
   return (
     <Root>
       <ThemeProvider theme={theme}>
-      <nav>
         <Nav />
-      </nav>
-      <div className="content">
-        <Hero />
+        <div className="content">
+          <Hero />
+          <Users />
+
           <React.Suspense fallback={<em>Loading...</em>}>
             <Router>
               <Dynamic path="dynamic" />
               <Routes path="*" />
             </Router>
           </React.Suspense>
-      </div>
+        </div>
       </ThemeProvider>
     </Root>
-  )
+  );
 }
-export default App
-
-
-
-
-
-
-
-
-
-
-
+export default App;

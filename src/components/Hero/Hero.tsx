@@ -35,9 +35,9 @@ const Hero = () => {
         const buttonLeft = Math.floor(Math.random() * bubbleWidth);
         const buttonHeight = Math.floor(Math.random() * buttonMax) + 30;
         return (
-          <StyledPopUpContainer>
+          <StyledPopUpContainer key={data.id}>
             <SpeechBubble key={data.id} bubbleData={data} />
-            <PopUpButton
+            <PopUpButton 
               buttonHeight={buttonHeight}
               positionTop={buttonTop}
               positionLeft={buttonLeft}

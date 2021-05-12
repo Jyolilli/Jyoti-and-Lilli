@@ -26,8 +26,6 @@ const HamburgerMenu = (props: HamburgerMenuProps) => {
     setShowMenu(!showMenu);
   };
 
-  console.log("showMenu", showMenu);
-
   return (
     <Box mr={3} mt={2} lineHeight="6px">
       {!showMenu && (
