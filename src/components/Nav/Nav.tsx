@@ -15,6 +15,7 @@ const Navbar = () => {
     height: 70px;
     background-color: ${colors.lightBlue};
     justify-content: flex-end;
+    padding: 10px;
   `;
 
   return (
