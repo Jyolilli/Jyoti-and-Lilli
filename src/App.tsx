@@ -16,12 +16,29 @@ import theme from "./theme";
 import Nav from "@components/Nav/Nav";
 
 import GlobalStyles from "@theme/globalStyles";
-import InputForm from "@components/InputForm";
+import { InputForm } from "@components/InputForm";
 
 library.add(faBars, faHeart, faArrowAltCircleRight);
 
 // Any routes that start with 'dynamic' will be treated as non-static routes
 addPrefetchExcludes(["dynamic"]);
+//    {
+//  "object": {
+// "name": "Lola"
+//  }
+//  }
+// (object: {name: "Ted"})
+export const ADD_USER = gql`
+    mutation insert_users_one(
+      $object: users_insert_input! = {name: "Test App Name"}
+      ) {
+      insert_users_one(object: $object) {
+        name
+        id
+      }
+    }
+  `;
+
 
 function App() {
   const USERS = gql`
@@ -32,6 +49,8 @@ function App() {
       }
     }
   `;
+  
+
 
   function Users() {
     const { loading, error, data } = useQuery(USERS);
