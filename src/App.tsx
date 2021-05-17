@@ -16,7 +16,7 @@ import theme from "./theme";
 import Nav from "@components/Nav/Nav";
 
 import GlobalStyles from "@theme/globalStyles";
-import InputForm from "@components/InputForm";
+import {InputForm} from "@components/InputForm";
 
 library.add(faBars, faHeart, faArrowAltCircleRight);
 

@@ -18,7 +18,6 @@ const Hero = () => {
     flex-direction: column;
     border-bottom: 0.5px dotted var(--black, ${colors.lightBlue});
   `;
-  // const [bubbleIdHighlighted, setbubbleIdHighlighted] = useState(false); // just a reminder, remove in production
 
   return (
     <StyledHeroContainer>
