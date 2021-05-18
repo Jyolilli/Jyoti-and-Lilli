@@ -2,10 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { AppContainer } from "react-hot-loader";
 import App from "./App";
-import { ApolloClient, InMemoryCache, ApolloProvider, gql, useQuery} from "@apollo/client";
+import { ApolloClient, InMemoryCache, HttpLink, ApolloProvider, gql, useQuery} from "@apollo/client";
 
 const client = new ApolloClient({
-  uri: "https://smashing-earwig-92.hasura.app/v1/graphql",
+  link: new HttpLink({
+    uri: "https://smashing-earwig-92.hasura.app/v1/graphql",
+  }),
+  
   cache: new InMemoryCache(),
 });
 
