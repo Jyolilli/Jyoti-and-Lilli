@@ -50,7 +50,7 @@ function App() {
         <GlobalStyles />
         <Nav />
         <Hero />
-        <Users />
+        {/* <Users /> */}
         <InputForm />
         <Content />
         <React.Suspense fallback={<em>Loading...</em>}>

@@ -2,10 +2,16 @@ import { createGlobalStyle } from 'styled-components';
 import { colors} from './styles/colors';
 import { fonts} from './styles/fonts';
 
+import img from '../images/wallpaper.jpg'
 const GlobalStyles = createGlobalStyle`
 
 body {
     background-color: ${colors.orange};
+    background-image: url(${img});
+    background-repeat: no-repeat;
+  background-position: left;
+  background-size: cover;
+
 }
 /* CSS for printing */
 
