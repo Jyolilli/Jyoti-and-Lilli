@@ -22,17 +22,15 @@ const ADD_USER = gql`
 const [addUser, { data }] = useMutation(ADD_USER);
 
   const handleSubmit = async (e: any) => {
-    console.log('e', e)
     e.preventDefault();
-    const result = await addUser({variables: {object: {name: nameInput}}});
-    console.log("data useMutation", data);
-    console.log("result", result);
+    await addUser({variables: {object: {name: nameInput}}});
   };
+  
   return (
     <div>
       <h1>comments!!</h1>
       <form>
-        <textarea onChange={(e) => setNameInput(e.target.value)}></textarea>
+        <input onChange={(e) => setNameInput(e.target.value)}></input>
       <button onClick={handleSubmit}>submit comment</button>
       </form>
     </div>
