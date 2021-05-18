@@ -8,6 +8,7 @@ const client = new ApolloClient({
   link: new HttpLink({
     uri: "https://smashing-earwig-92.hasura.app/v1/graphql",
   }),
+
   
   cache: new InMemoryCache(),
 });

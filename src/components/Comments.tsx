@@ -17,8 +17,9 @@ const Comments = () => {
   const [addUser, { data }] = useMutation(ADD_USER);
 
   const handleSubmit = async () => {
+    const result = addUser();
     console.log("data useMutation", data);
-    console.log("addUser", addUser);
+    console.log("result", result);
   };
 
   return (
