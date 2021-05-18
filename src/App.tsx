@@ -19,6 +19,7 @@ import Comments from "@components/Comments"
 import GlobalStyles from "@theme/globalStyles";
 import { InputForm } from "@components/InputForm";
 import Users from "@components/Users";
+import Comments from "@components/Comments";
 
 library.add(faBars, faHeart, faArrowAltCircleRight);
 
@@ -53,7 +54,8 @@ function App() {
         <Hero />
         <Comments />
         <Users />
-        <InputForm />
+        <Comments />
+        {/* <InputForm /> */}
         <Content />
         <React.Suspense fallback={<em>Loading...</em>}>
           <Router>
