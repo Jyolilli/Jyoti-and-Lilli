@@ -14,6 +14,7 @@ import { ThemeProvider } from "styled-components";
 import { gql, useQuery } from "@apollo/client";
 import theme from "./theme";
 import Nav from "@components/Nav/Nav";
+import Comments from "@components/Comments"
 
 import GlobalStyles from "@theme/globalStyles";
 import { InputForm } from "@components/InputForm";
@@ -50,6 +51,7 @@ function App() {
         <GlobalStyles />
         <Nav />
         <Hero />
+        <Comments />
         <Users />
         <InputForm />
         <Content />
