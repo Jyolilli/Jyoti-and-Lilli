@@ -24,7 +24,7 @@ const Comments = () => {
   return (
     <div>
       <h1>comments!!</h1>
-      <button onClick={handleSubmit}></button>
+      <button onClick={handleSubmit}>submit comment</button>
     </div>
   );
 };
