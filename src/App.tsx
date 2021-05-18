@@ -17,6 +17,7 @@ import Nav from "@components/Nav/Nav";
 
 import GlobalStyles from "@theme/globalStyles";
 import { InputForm } from "@components/InputForm";
+import Users from "@components/Users";
 
 library.add(faBars, faHeart, faArrowAltCircleRight);
 
@@ -41,28 +42,7 @@ export const ADD_USER = gql`
 
 
 function App() {
-  const USERS = gql`
-    query GetUsers {
-      users {
-        name
-        id
-      }
-    }
-  `;
-  
 
-
-  function Users() {
-    const { loading, error, data } = useQuery(USERS);
-    console.log("data from hasura", data);
-
-    if (loading) return <p>Loading...</p>;
-    if (error) return <p>Error :(</p>;
-
-    return data.users.map((data: { name: string; id: number }) => (
-      <div key={data.id}>{data.name}</div>
-    ));
-  }
 
   return (
     <Root>
