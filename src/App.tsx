@@ -51,7 +51,7 @@ function App() {
         <GlobalStyles />
         <Nav />
         <Hero />
-        <Comments />
+        {/* <Comments /> */}
         <Users />
         {/* <InputForm /> */}
         <Content />

@@ -25,10 +25,11 @@ const [addUser, { data }] = useMutation(ADD_USER);
     e.preventDefault();
     await addUser({variables: {object: {name: nameInput}}});
   };
+  console.log(nameInput)
   
   return (
     <div>
-      <h1>comments!!</h1>
+      <h1>{nameInput}</h1>
       <form>
         <input onChange={(e) => setNameInput(e.target.value)}></input>
       <button onClick={handleSubmit}>submit comment</button>

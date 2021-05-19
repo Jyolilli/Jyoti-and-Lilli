@@ -1,7 +1,6 @@
 import React from "react";
 import {
   StyledArticle,
-  StyledImage,
 } from "./SpeechBubble.style";
 import { Box } from "@theme/components/Box";
 
