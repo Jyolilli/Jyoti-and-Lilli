@@ -2,10 +2,14 @@ import React, { useState } from "react";
 import { gql, useMutation } from "@apollo/client";
 // the use of gql turns the query into a proper graphql query
 
+type CommentsProps = {
+  getUsersQuery: Function;
+};
 
-const Comments = () => {
 
-  const [nameInput, setNameInput] = useState('')
+const Comments = ({getUsersQuery}: CommentsProps) => {
+
+const [nameInput, setNameInput] = useState('')
   
 
 const ADD_USER = gql`
@@ -19,11 +23,12 @@ const ADD_USER = gql`
   }
 `;
 
-const [addUser, { data }] = useMutation(ADD_USER);
+const [addUser, { error }] = useMutation(ADD_USER);
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     await addUser({variables: {object: {name: nameInput}}});
+    getUsersQuery();
   };
   console.log(nameInput)
   

@@ -8,7 +8,11 @@ import { bubbleData } from "@components/bubbles/bubbleData";
 import styled from "styled-components";
 import Comments from "@components/Comments";
 
-const Hero = () => {
+type HeroProps = {
+  getUsersQuery: Function;
+};
+
+const Hero = (props: HeroProps) => {
   const [showComments, setShowComments] = useState(false);
   const StyledText = styled(Text)`
     margin-bottom: 5px;
@@ -61,7 +65,7 @@ const Hero = () => {
         <StyledButton onClick={() => setShowComments(!showComments)}>
           New Speechbubble
         </StyledButton>
-        {showComments ? <Comments /> : null}
+        {showComments ? <Comments getUsersQuery={props.getUsersQuery}/> : null}
       </StyledCommentsContainer>
     </StyledHeroContainer>
   );
