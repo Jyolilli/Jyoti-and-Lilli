@@ -13,7 +13,7 @@ const Navbar = () => {
   const StyledNavbar = styled.nav`
     display: flex;
     height: 70px;
-    background-color: ${colors.lightBlue};
+    background-color: #009688;
     justify-content: flex-end;
     padding: 10px;
   `;

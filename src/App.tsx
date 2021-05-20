@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Root, Routes, addPrefetchExcludes } from "react-static";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { Router } from "@reach/router";
@@ -14,7 +14,7 @@ import { ThemeProvider } from "styled-components";
 import { gql, useQuery } from "@apollo/client";
 import theme from "./theme";
 import Nav from "@components/Nav/Nav";
-import Comments from "@components/Comments"
+import Comments from "@components/Comments";
 
 import GlobalStyles from "@theme/globalStyles";
 import { InputForm } from "@components/InputForm";
@@ -24,34 +24,45 @@ library.add(faBars, faHeart, faArrowAltCircleRight);
 
 // Any routes that start with 'dynamic' will be treated as non-static routes
 addPrefetchExcludes(["dynamic"]);
-//    {
-//  "object": {
-// "name": "Lola"
-//  }
-//  }
-// (object: {name: "Ted"})
+
 export const ADD_USER = gql`
-    mutation insert_users_one(
-      $object: users_insert_input! = {name: "Test App Name"}
-      ) {
-      insert_users_one(object: $object) {
-        name
-        id
-      }
+  mutation insert_users_one(
+    $object: users_insert_input! = { name: "Test App Name" }
+  ) {
+    insert_users_one(object: $object) {
+      name
+      id
     }
-  `;
+  }
+`;
+
+const USERS = gql`
+  query GetUsers {
+    users {
+      name
+      id
+    }
+  }
+`;
 
 
 function App() {
-
+  const [users, setUsers] = useState([]);
+  const { loading, error, data, refetch } = useQuery(USERS); // add error handling
+ 
+  const GetUsersQuery = () => {
+    console.log("GetUsersQuery");
+    refetch();
+    setUsers(data);
+  };
 
   return (
     <Root>
       <ThemeProvider theme={theme}>
         <GlobalStyles />
         <Nav />
-        <Hero />
-        <Comments />
+        <Hero getUsersQuery={GetUsersQuery} />
+        {/* <Comments /> */}
         <Users />
         {/* <InputForm /> */}
         <Content />
