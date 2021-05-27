@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { AppContainer } from "react-hot-loader";
 import App from "./App";
-import { ApolloClient, InMemoryCache, HttpLink, ApolloProvider, gql, useQuery} from "@apollo/client";
+import { ApolloClient, InMemoryCache, HttpLink, ApolloProvider} from "@apollo/client";
 
 const client = new ApolloClient({
   link: new HttpLink({
@@ -16,7 +16,7 @@ const client = new ApolloClient({
 if (typeof document !== "undefined") {
   const target = document.getElementById("root");
   const renderMethod = target.hasChildNodes()
-    ? ReactDOM.hydrate
+    ? ReactDOM.hydrate // .hydrate will not change the node but only attach eventHandlers
     : ReactDOM.render;
   const render = (Comp: Function) => {
     renderMethod(

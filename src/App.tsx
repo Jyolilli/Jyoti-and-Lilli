@@ -9,6 +9,7 @@ import {
   faBars,
   faHeart,
   faArrowAltCircleRight,
+  faUser,
 } from "@fortawesome/free-solid-svg-icons";
 import { ThemeProvider } from "styled-components";
 import { gql, useQuery } from "@apollo/client";
@@ -20,11 +21,12 @@ import GlobalStyles from "@theme/globalStyles";
 import { InputForm } from "@components/InputForm";
 import Users from "@components/Users";
 
-library.add(faBars, faHeart, faArrowAltCircleRight);
+library.add(faBars, faUser, faHeart, faArrowAltCircleRight);
 
 // Any routes that start with 'dynamic' will be treated as non-static routes
 addPrefetchExcludes(["dynamic"]);
 
+// Add user to db
 export const ADD_USER = gql`
   mutation insert_users_one(
     $object: users_insert_input! = { name: "Test App Name" }
@@ -36,7 +38,9 @@ export const ADD_USER = gql`
   }
 `;
 
-const USERS = gql`
+
+// Get all users from db
+const GET_USERS = gql`
   query GetUsers {
     users {
       name
@@ -48,11 +52,11 @@ const USERS = gql`
 
 function App() {
   const [users, setUsers] = useState([]);
-  const { loading, error, data, refetch } = useQuery(USERS); // add error handling
+  const { loading, error, data, refetch } = useQuery(GET_USERS); // add error handling
  
   const GetUsersQuery = () => {
     console.log("GetUsersQuery");
-    refetch();
+    refetch(); //Refetching enables you to refresh query results in response to a particular user action
     setUsers(data);
   };
 
@@ -62,7 +66,6 @@ function App() {
         <GlobalStyles />
         <Nav />
         <Hero getUsersQuery={GetUsersQuery} />
-        {/* <Comments /> */}
         <Users />
         {/* <InputForm /> */}
         <Content />

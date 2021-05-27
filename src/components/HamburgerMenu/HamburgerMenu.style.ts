@@ -21,6 +21,8 @@ const StyledIcon = styled.div`
     color: ${colors.primaryWhite};
   }
 `;
+const StyledUserMenu = styled.div`
+`;
 
 const StyledHamburgerMenu = styled.label`
   background-color: ${colors.blue};
@@ -50,4 +52,4 @@ const StyledCloseButton = styled.button`
   }
 `;
 
-export { StyledCloseButton, StyledLink, StyledIcon, StyledHamburgerMenu };
+export { StyledCloseButton, StyledLink, StyledIcon, StyledHamburgerMenu, StyledUserMenu };
