@@ -29,13 +29,14 @@ const Nav = ({links} : NavbarProps) => {
 
 const UserMenu = ({ links }: NavbarProps) => {
   return <NavSubMenu StyledMenu={StyledUserMenu} iconName={FontAwesomeIcon}>
-    Stuff that goes in the panel
+    <h1>User Menu</h1>
   </NavSubMenu>;
 }
 
 const HamburgerMenu = ({ links }: NavbarProps) => {
   return <NavSubMenu StyledMenu={StyledHamburgerMenu} iconName={FontAwesomeIcon}>
-    <ul><li>{links}</li><li>links</li></ul>
+    {/* <ul><li>{links}</li><li>links</li></ul> */}
+    <h1>Hamburger Menu</h1>
   </NavSubMenu>;
 }
 
