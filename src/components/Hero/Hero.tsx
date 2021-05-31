@@ -14,6 +14,8 @@ type HeroProps = {
 
 const Hero = (props: HeroProps) => {
   const [showComments, setShowComments] = useState(false);
+
+
   const StyledText = styled(Text)`
     margin-bottom: 5px;
   `;
