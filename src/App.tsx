@@ -19,6 +19,7 @@ import Comments from "@components/Comments";
 import GlobalStyles from "@theme/globalStyles";
 import { InputForm } from "@components/InputForm";
 import Users from "@components/Users";
+import AllMessages from "@components/AllMessages";
 
 library.add(faBars, faHeart, faArrowAltCircleRight);
 
@@ -44,16 +45,25 @@ const USERS = gql`
     }
   }
 `;
+const MESSAGES = gql`
+  query GetMessages {
+    messages {
+    message
+    id
+  }
+  }
+`;
 
 
 function App() {
-  const [users, setUsers] = useState([]);
-  const { loading, error, data, refetch } = useQuery(USERS); // add error handling
+  const [messages, setMessages] = useState([]);
+  const { loading, error, data, refetch } = useQuery(MESSAGES); // add error handling
  
-  const GetUsersQuery = () => {
-    console.log("GetUsersQuery");
+  const GetMessagesQuery = () => {
+    console.log("GetMessagesQuery");
     refetch();
-    setUsers(data);
+    setMessages(data);
+    console.log("messages", messages);
   };
 
   return (
@@ -61,9 +71,10 @@ function App() {
       <ThemeProvider theme={theme}>
         <GlobalStyles />
         <Nav />
-        <Hero getUsersQuery={GetUsersQuery} />
+        <Hero getMessagesQuery={GetMessagesQuery} />
         {/* <Comments /> */}
         <Users />
+        <AllMessages />
         {/* <InputForm /> */}
         <Content />
         <React.Suspense fallback={<em>Loading...</em>}>

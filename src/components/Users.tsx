@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import { gql, useQuery } from "@apollo/client";
 
 const USERS = gql`
@@ -11,10 +11,8 @@ query GetUsers {
 `;
 
 const Users = () => {
-  const [users, setUsers] = useState('')
   
     const { loading, error, data } = useQuery(USERS);
-    console.log("data from hasura", data);
     
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error :(</p>;

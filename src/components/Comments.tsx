@@ -3,54 +3,49 @@ import { gql, useMutation } from "@apollo/client";
 // the use of gql turns the query into a proper graphql query
 
 type CommentsProps = {
-  getUsersQuery: Function;
+  getMessagesQuery: Function;
 };
 
+const Comments = ({ getMessagesQuery }: CommentsProps) => {
+  const [nameInput, setNameInput] = useState("");
 
-const Comments = ({getUsersQuery}: CommentsProps) => {
+  //users query
+  // const ADD_USER = gql`
+  //   mutation insert_users_one(
+  //     $object: users_insert_input!
+  //   ) {
+  //     insert_users_one(object: $object) {
+  //       name
+  //       id
+  //     }
+  //   }
+  // `;
 
-const [nameInput, setNameInput] = useState('')
-  
+  //messages query
+  const ADD_MESSAGE = gql`
+    mutation insert_messages_one($message: String!) {
+      insert_messages_one(object: { message: $message, sender: 1 }) {
+        id
+        message
+      }
+    }
+  `;
 
-// const ADD_USER = gql`
-//   mutation insert_users_one(
-//     $object: users_insert_input! 
-//   ) {
-//     insert_users_one(object: $object) {
-//       name
-//       id
-//     }
-//   }
-// `;
-const ADD_MESSAGE = gql`
-  mutation insert_messages_one($message: String!){
-  insert_messages_one
-  (object: {message: $message,sender: 1}) {
-    id
-    message
-  }
-  }
-`;
-
-
-
-
-
-const [addUser, { error }] = useMutation(ADD_MESSAGE);
+  const [addMessage, { error }] = useMutation(ADD_MESSAGE);
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
-    await addUser({variables: {message: nameInput}});
-    getUsersQuery();
+    await addMessage({ variables: { message: nameInput } });
+    getMessagesQuery();
   };
-  console.log(nameInput)
-  
+  console.log(nameInput);
+
   return (
     <div>
       <h1>{nameInput}</h1>
       <form>
         <input onChange={(e) => setNameInput(e.target.value)}></input>
-      <button onClick={handleSubmit}>submit comment</button>
+        <button onClick={handleSubmit}>submit comment</button>
       </form>
     </div>
   );
