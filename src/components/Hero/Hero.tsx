@@ -9,11 +9,13 @@ import styled from "styled-components";
 import Comments from "@components/Comments";
 
 type HeroProps = {
-  getUsersQuery: Function;
+  getMessagesQuery: Function;
 };
 
 const Hero = (props: HeroProps) => {
   const [showComments, setShowComments] = useState(false);
+
+
   const StyledText = styled(Text)`
     margin-bottom: 5px;
   `;
@@ -65,7 +67,7 @@ const Hero = (props: HeroProps) => {
         <StyledButton onClick={() => setShowComments(!showComments)}>
           New Speechbubble
         </StyledButton>
-        {showComments ? <Comments getUsersQuery={props.getUsersQuery}/> : null}
+        {showComments ? <Comments getMessagesQuery={props.getMessagesQuery}/> : null}
       </StyledCommentsContainer>
     </StyledHeroContainer>
   );
