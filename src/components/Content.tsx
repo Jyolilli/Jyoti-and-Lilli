@@ -4,7 +4,11 @@ import SpeechBubble from "./bubbles/SpeechBubble";
 import { bubbleData } from "./bubbles/bubbleData";
 import styled from "styled-components";
 
-const Content = () => {
+type ContentProps = {
+  getMessagesQuery: Function;
+};
+
+const Content = (props: ContentProps) => {
   const StyledContentContainer = styled.div`
     overflow: hidden;
     margin: 0 auto;

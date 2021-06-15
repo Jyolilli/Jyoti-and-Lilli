@@ -6,14 +6,14 @@ import PopUpButton from "@components/PopUpButton/PopUpButton";
 import SpeechBubble from "@components/bubbles/SpeechBubble";
 import { bubbleData } from "@components/bubbles/bubbleData";
 import styled from "styled-components";
-import Comments from "@components/Comments";
+import InputMessage from "@components/InputMessage";
 
 type HeroProps = {
   getMessagesQuery: Function;
 };
 
 const Hero = (props: HeroProps) => {
-  const [showComments, setShowComments] = useState(false);
+  const [showNewMessage, setShowNewMessage] = useState(false);
 
 
   const StyledText = styled(Text)`
@@ -64,10 +64,10 @@ const Hero = (props: HeroProps) => {
         nifty + swifty code lizzards
       </Text>
       <StyledCommentsContainer>
-        <StyledButton onClick={() => setShowComments(!showComments)}>
+        <StyledButton onClick={() => setShowNewMessage(!showNewMessage)}>
           New Speechbubble
         </StyledButton>
-        {showComments ? <Comments getMessagesQuery={props.getMessagesQuery}/> : null}
+        {showNewMessage ? <InputMessage getMessagesQuery={props.getMessagesQuery}/> : null}
       </StyledCommentsContainer>
     </StyledHeroContainer>
   );
