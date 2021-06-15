@@ -72,8 +72,9 @@ function App() {
         <Nav />
         <Hero getMessagesQuery={GetMessagesQuery} />
         <Users />
-        <AllMessages />
-        <Content getMessagesQuery={GetMessagesQuery}/>
+        {/* <AllMessages /> */}
+        {data && <Content messages={data.messages}/>}
+         {/* <Content messages={messages}/> */}
         <React.Suspense fallback={<em>Loading...</em>}>
           <Router>
             <Dynamic path="dynamic" />
