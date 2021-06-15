@@ -2,12 +2,14 @@ import React, { useState } from "react";
 import { gql, useMutation } from "@apollo/client";
 // the use of gql turns the query into a proper graphql query
 
-type CommentsProps = {
+type MessagesProps = {
   getMessagesQuery: Function;
 };
 
-const Comments = ({ getMessagesQuery }: CommentsProps) => {
-  const [nameInput, setNameInput] = useState("");
+//NewMessage sends newest input-message to db
+
+const InputMessage = ({ getMessagesQuery }: MessagesProps) => {
+  const [messageInput, setMessageInput] = useState("");
 
   //users query
   // const ADD_USER = gql`
@@ -35,19 +37,19 @@ const Comments = ({ getMessagesQuery }: CommentsProps) => {
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
-    await addMessage({ variables: { message: nameInput } });
+    await addMessage({ variables: { message: messageInput } });
     getMessagesQuery();
   };
-  console.log(nameInput);
+  console.log("messageInput:", messageInput);
 
   return (
     <div>
-      <h1>{nameInput}</h1>
+      {/* <h1>{messageInput}</h1> */}
       <form>
-        <input onChange={(e) => setNameInput(e.target.value)}></input>
-        <button onClick={handleSubmit}>submit comment</button>
+        <input onChange={(e) => setMessageInput(e.target.value)}></input>
+        <button onClick={handleSubmit}>submit message</button>
       </form>
     </div>
   );
 };
-export default Comments;
+export default InputMessage;
