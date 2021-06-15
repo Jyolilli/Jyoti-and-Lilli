@@ -18,7 +18,7 @@ const AllMessages = () => {
 
   const allMessageEntries = data.messages;
 
-  console.log("data.messages, AllMessages", data.messages);
+  // console.log("data.messages, AllMessages", data.messages);
   const latestMessageEntry = allMessageEntries[allMessageEntries.length - 1];
   // map through Messages:
   // return ( data.messages.map((data: { name: string; id: number }) => {
