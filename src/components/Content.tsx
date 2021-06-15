@@ -1,11 +1,15 @@
 import React from "react";
 import PopUpButton from "./PopUpButton/PopUpButton";
 import SpeechBubble from "./bubbles/SpeechBubble";
-import { bubbleData } from "./bubbles/bubbleData";
+// import { bubblemessage } from "./bubbles/bubblemessage";
 import styled from "styled-components";
 
 type ContentProps = {
-  getMessagesQuery: Function;
+  messages: {
+    id?: number;
+    title?: string;
+    message?: string;
+  }[];
 };
 
 const Content = (props: ContentProps) => {
@@ -24,7 +28,8 @@ const Content = (props: ContentProps) => {
 
   return (
     <StyledContentContainer>
-      {bubbleData.map((data) => {
+      {props.messages && props.messages.map((message) => {
+      
         const bubbleHeight = 111;
         const bubbleWidth = 335;
         const buttonMax = 50;
@@ -33,14 +38,15 @@ const Content = (props: ContentProps) => {
         const buttonHeight = Math.floor(Math.random() * buttonMax) + 50;
         return (
           <StyledPopUpContainer>
-            <SpeechBubble key={data.id} bubbleData={data} />
-            <PopUpButton
+            {message.message}
+            <SpeechBubble key={message.id} data={message} />
+            {/* <PopUpButton
               buttonHeight={buttonHeight}
               positionTop={buttonTop}
               positionLeft={buttonLeft}
-              key={data.popUpTitle}
-              data={data}
-            />
+              key={message.popUpTitle}
+              // message={message}
+            /> */}
           </StyledPopUpContainer>
         );
       })}

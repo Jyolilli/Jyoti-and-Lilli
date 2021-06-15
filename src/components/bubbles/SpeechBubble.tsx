@@ -5,23 +5,24 @@ import {
 import { Box } from "@theme/components/Box";
 
 type SpeechBubbleProps = {
-    bubbleData: {
+    data: {
       id?: number;
-      copy?: string;
-      bubble?: string;
+      title?: string;
+      message?: string;
     };
   };
 
 const SpeechBubble = (props: SpeechBubbleProps) => {
-    const { bubbleData } = props;
+    const { data } = props;
+    console.log("Speechbubble data:", data)
   return (
     <>
       <Box pb={3}>
         <StyledArticle variant="mediumText">
-          {bubbleData.copy}
+          {data.message}
         </StyledArticle>
       </Box>
-      <img src={bubbleData.bubble} />
+      {/* <img src={data.bubble} /> */}
     </>
   );
 };
