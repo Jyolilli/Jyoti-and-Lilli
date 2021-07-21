@@ -33,7 +33,7 @@ const Content = (props: ContentProps) => {
         const buttonHeight = Math.floor(Math.random() * buttonMax) + 50;
         return (
           <StyledPopUpContainer>
-            <SpeechBubble key={data.id} bubbleData={data} />
+            {/* <SpeechBubble key={data.id} bubbleData={data} /> */}
             <PopUpButton
               buttonHeight={buttonHeight}
               positionTop={buttonTop}

@@ -3,14 +3,14 @@ import {
   StyledArticle,
 } from "./SpeechBubble.style";
 import { Box } from "@theme/components/Box";
+import {Message} from "../../types"
+
+const bubble = "/images/bubble_s_left.svg";
 
 type SpeechBubbleProps = {
-    bubbleData: {
-      id?: number;
-      copy?: string;
-      bubble?: string;
+    bubbleData: Message
     };
-  };
+
 
 const SpeechBubble = (props: SpeechBubbleProps) => {
     const { bubbleData } = props;
@@ -18,10 +18,10 @@ const SpeechBubble = (props: SpeechBubbleProps) => {
     <>
       <Box pb={3}>
         <StyledArticle variant="mediumText">
-          {bubbleData.copy}
+          {bubbleData.message}
         </StyledArticle>
       </Box>
-      <img src={bubbleData.bubble} />
+      <img src={bubble} />
     </>
   );
 };

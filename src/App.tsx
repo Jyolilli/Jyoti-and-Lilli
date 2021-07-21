@@ -3,7 +3,7 @@ import { Root, Routes, addPrefetchExcludes } from "react-static";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { Router } from "@reach/router";
 import Hero from "@components/Hero/Hero";
-import Content from "@components/Content";
+// import Content from "@components/Content";
 import Dynamic from "@containers/Dynamic";
 import {
   faBars,
@@ -47,17 +47,16 @@ const USERS = gql`
 const MESSAGES = gql`
   query GetMessages {
     messages {
-    message
-    id
-  }
+      message
+      id
+    }
   }
 `;
-
 
 function App() {
   const [messages, setMessages] = useState([]);
   const { loading, error, data, refetch } = useQuery(MESSAGES); // add error handling
- 
+
   const GetMessagesQuery = () => {
     console.log("GetMessagesQuery");
     refetch();
@@ -73,7 +72,7 @@ function App() {
         <Hero getMessagesQuery={GetMessagesQuery} />
         <Users />
         <AllMessages />
-        <Content getMessagesQuery={GetMessagesQuery}/>
+        {/* <Content getMessagesQuery={GetMessagesQuery}/> */}
         <React.Suspense fallback={<em>Loading...</em>}>
           <Router>
             <Dynamic path="dynamic" />

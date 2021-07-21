@@ -1,5 +1,7 @@
 import React from "react";
 import { gql, useQuery } from "@apollo/client";
+import SpeechBubble from "./bubbles/SpeechBubble";
+import {Message} from "../types"
 
 const MESSAGES = gql`
   query GetMessages {
@@ -10,23 +12,25 @@ const MESSAGES = gql`
   }
 `;
 
+
+
 const AllMessages = () => {
   const { loading, error, data } = useQuery(MESSAGES);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <p key="loading">Loading...</p>;
   if (error) return <p>Error :(</p>;
 
-  // const allMessageEntries = data.messages;
-
-  console.log("data.messages, AllMessages", data.messages);
+    // const allMessageEntries = data.messages;
+    
+    console.log("data.messages, AllMessages", data.messages);
+    // return null
   // const latestMessageEntry = allMessageEntries[allMessageEntries.length - 1];
   // map through Messages:
-  // return ( data.messages.map((data: { name: string; id: number }) => {
-  //   <>
-  //   <h1>AllMessages</h1>
-  //   <div key={data.id}>{data.id}</div></>})
+  return data.messages.map((data: Message) => 
+      <SpeechBubble key={data.id} bubbleData={data} />
+  );
 
   // return <div key={latestMessageEntry.id}>{latestMessageEntry.message}</div>;
-  };
+};
 
 export default AllMessages;
