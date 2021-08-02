@@ -12,6 +12,9 @@ const MESSAGES = gql`
   }
 `;
 
+// I am getting an understanding on how to use refetch() in Apollo
+
+
 
 
 const AllMessages = () => {
