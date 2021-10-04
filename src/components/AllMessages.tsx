@@ -14,7 +14,7 @@ const MESSAGES = gql`
 
 // I am getting an understanding on how to use refetch() in Apollo
 
-
+// useQuery receives all messages data and they are rendered within Speechbubble
 
 
 const AllMessages = () => {
@@ -30,7 +30,7 @@ const AllMessages = () => {
   // const latestMessageEntry = allMessageEntries[allMessageEntries.length - 1];
   // map through Messages:
   return data.messages.map((data: Message) => 
-      <SpeechBubble key={data.id} bubbleData={data} />
+      <SpeechBubble key={data.id} sender={data.sender} bubbleData={data} />
   );
 
   // return <div key={latestMessageEntry.id}>{latestMessageEntry.message}</div>;

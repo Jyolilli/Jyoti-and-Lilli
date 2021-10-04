@@ -11,17 +11,6 @@ type MessagesProps = {
 const InputMessage = ({ getMessagesQuery }: MessagesProps) => {
   const [messageInput, setMessageInput] = useState("");
 
-  //users query
-  // const ADD_USER = gql`
-  //   mutation insert_users_one(
-  //     $object: users_insert_input!
-  //   ) {
-  //     insert_users_one(object: $object) {
-  //       name
-  //       id
-  //     }
-  //   }
-  // `;
 
   //messages query
   const ADD_MESSAGE = gql`
@@ -32,6 +21,8 @@ const InputMessage = ({ getMessagesQuery }: MessagesProps) => {
       }
     }
   `;
+
+  // Inputmessage uses addMessage to add a mutation, here the e.target.value with setMessageInput as messageInput to the database.
 
   const [addMessage, { error }] = useMutation(ADD_MESSAGE);
 
@@ -44,7 +35,6 @@ const InputMessage = ({ getMessagesQuery }: MessagesProps) => {
 
   return (
     <div>
-      {/* <h1>{messageInput}</h1> */}
       <form>
         <input onChange={(e) => setMessageInput(e.target.value)}></input>
         <button onClick={handleSubmit}>submit message</button>

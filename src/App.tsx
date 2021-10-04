@@ -63,7 +63,6 @@ function App() {
     setMessages(data); // may not be necessary or even helpful, since graphql probably refreshes the data object by itself after the refresh() is called.
     console.log("messages", messages);
   };
-
   // NEXT STEPS: conditionally render different speechbubble dependent on the sender
 
   return (

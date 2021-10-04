@@ -2,9 +2,6 @@ import React, { useState } from "react";
 import { Text } from "@theme/components/Text";
 import { Box } from "@theme/components/Box";
 import { colors } from "@theme/styles/colors";
-import PopUpButton from "@components/PopUpButton/PopUpButton";
-import SpeechBubble from "@components/bubbles/SpeechBubble";
-import { bubbleData } from "@components/bubbles/bubbleData";
 import styled from "styled-components";
 import InputMessage from "@components/InputMessage";
 
